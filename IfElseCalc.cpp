@@ -1,40 +1,44 @@
 #include <iostream>
-#include <cfloat>
 #include <cmath>
+#include <cfloat>
 
 using namespace std;
 
 int main()
 {
-    // define variables
-    char operation;
+
+    // Define Variables
+    string operation;
     double number1, number2, res;
 
-    // Get Variables
-    cout << "Enter First Number: ";
+    // Get user input
+    cout << "Enter Number 1: ";
     cin >> number1;
-    cout << "Enter Operation (+, -, *, /): ";
+    cout << "Enter Operation (+, -, /, *): ";
     cin >> operation;
-    cout << "Enter Second Number: ";
+    cout << "Enter Number 2: ";
     cin >> number2;
 
     // Do the math
-    switch (operation)
+    if (operation == "+")
     {
-    case '+':
         res = number1 + number2;
-        break;
-    case '-':
+    }
+    else if (operation == "-")
+    {
         res = number1 - number2;
-        break;
-    case '*':
+    }
+    else if (operation == "*")
+    {
         res = number1 * number2;
-        break;
-    case '/':
+    }
+    else if (operation == "/")
+    {
         res = number1 / number2;
-        break;
-    default:
-        cout << "Error! Operator is not recognized" << endl;
+    }
+    else
+    {
+        cout << "Error! Operation not recongnized" << endl;
         res = -DBL_MAX;
     }
 
